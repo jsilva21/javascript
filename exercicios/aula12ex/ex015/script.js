@@ -46,5 +46,4 @@ function verificar(){
                 res.style.textAlign = 'center'
                 res.appendChild(img)
     }
-
 }
