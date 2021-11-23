@@ -1,10 +1,10 @@
 body{
-    background: rgb(186, 186, 252);
+    background: rgb(164, 164, 241);
     font: normal 15pt arial;
 }
 
 header{
-    color: black;
+    color: white;
     text-align: center;
 
 }
@@ -21,7 +21,7 @@ section{
 }
 
 footer{
-    color: black;
+    color: white;
     text-align: center;
     font-style: italic;
 }
