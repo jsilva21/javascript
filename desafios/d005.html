@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor</title>
+    <style>
+    body{
+            margin: 0;
+            padding: 0;
+            font-size: 18px;
+            font-family: "Arial", sans-serif;
+            background: #7ea2eb;
+        } 
+        button { 
+            background-color: burlywood;
+            font-size: 16pt; 
+            padding: 25px; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de distâncias</h1>
+    <button onclick="botao()">Conversão</button>
+    <section id="saida">
+        <p>Clique no botão para iniciar as conversões...</p>
+    </section>
+    <script>
+        function botao(){
+            let valor = Number(window.prompt('Qual a distância em quilometros?'))
+
+            let m = valor * 1000
+            let cm = valor * 100000
+
+            let res = document.getElementById('saida')
+            res.innerHTML += `<p>O distância a ser analisado aqui será de <strong>${valor} KM</strong>.</p><hr>`
+
+            res.innerHTML += `A distância em Metros é = ${m} m;<br>`
+            res.innerHTML += `A distância em Centímetros é = ${cm} cm;`   
+
+            }
+    </script>
+</body>
+</html>
+
+
