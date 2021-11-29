@@ -6,7 +6,7 @@ function calcidade() {
     let idade = ano - nasc
 
     let saida = document.getElementById('saida')
-    saida.innerHTML = `<p>Quem nasceu em ${nasc} vai completar/completou <strong>${idade}</strong> anos em ${ano}.</p>`
+    saida.innerHTML = `<p>Quem nasceu em <strong>${nasc}</strong> vai completar/completou <strong>${idade}</strong> anos em ${ano}.</p>`
 }
 function zerar() {
     //let contador = 0
