@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculos</title>
+    <style>
+        body { font: 12pt Arial; }
+        button { font-size: 12pt; padding: 30px; }
+    </style>
+</head>
+<body>
+    <h1>Calculando acréscimos e descontos:</h1>   
+    <button onclick="desconto()">Aplicar desconto</button>
+    <button onclick="reajuste()">Aplicar reajuste</button>
+    <button onclick="limpar()">Limpar</button>
+       
+    <section id="saida"></section>
+        
+        <script>
+        let botao = window.document.getElementById('saida')
+      
+            function desconto() {
+                let produto = window.prompt('Qual o nome do produto?')
+                let valor = Number(window.prompt('Qual o valor do produto?'))
+                let porc = Number(window.prompt('Qual a porcentagem de desconto?'))
+                
+                let desc = (valor * porc)/100
+                let novovalor = valor - desc
+                
+                let saida = document.getElementById('saida')
+                    saida.innerHTML = `<h2>Aplicação de desconto</h2>`
+                    saida.innerHTML += `<p>O preço original era de: ${valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>`
+                    saida.innerHTML += `<p>Considerando o desconto aplicado de <strong>${desc.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</strong></p>`
+                    saida.innerHTML += `<p>Seu produto saiu por ${novovalor.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}.</p>`
+            }
+                               
+            function reajuste() {
+                let produto = window.prompt('Qual o nome do produto?')
+                let valor = Number(window.prompt('Qual o valor do produto?'))
+                let porc = Number(window.prompt('Qual a porcentagem de acréscimo?'))
+                
+                let desc = (valor * porc)/100
+                let novovalor = valor + desc
+                
+                let saida = document.getElementById('saida')
+                    saida.innerHTML = `<h2>Acréscimo de juros</h2>`
+                    saida.innerHTML += `<p>O preço original era de: ${valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>`
+                    saida.innerHTML += `<p>Considerando o acréscimo de juros aplicado de <strong>${desc.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</strong></p>`
+                    saida.innerHTML += `<p>Seu produto saiu por ${novovalor.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}.</p>`
+                }
+
+         function limpar() {
+            contador = 0
+            botao.innerHTML = `<p>Fazer nova consulta!</p>`
+        }        
+    </script>
+</body>
+</html>

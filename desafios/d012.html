@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço mudou</title>
+    <style> 
+        body {
+            font: 13pt Arial;
+        }
+        button {
+            font: 14pt Arial;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Alteração de Valor</h1>
+    <button onclick="verificar()">Verificar</button>
+    <section id="saida">
+        <p><strong>Clique no botão acima para analisar a variação de valor do produto...</strong></p>
+    </section>
+    <script>        
+        function verificar() {
+            let pant = Number(window.prompt('Qual o valor antigo?'))
+            let pnovo = Number(window.prompt('Qual o novo valor?'))
+
+            let porcr = (pnovo - pant)*100/pnovo  //Redução
+            let porca = (pnovo - pant)*100/pant // Aumento
+            let difpreco = pnovo - pant   
+            
+            let saida = document.getElementById('saida')
+            saida.innerHTML = `<h2>Aplicação os valores informados</h2>`
+            saida.innerHTML += `<p>O produto custava ${pant.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} e agora custa ${pnovo.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} </p>`
+            if (pant < pnovo){
+                saida.innerHTML += `<p>Hoje o produto está mais caro!!!</p>`
+                saida.innerHTML += `<p> O preço subiu ${difpreco.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} em relação ao anterior. </p>`
+                saida.innerHTML += `<p> Uma variação de ${porca}% pra cima.</p>`
+            }else{
+                saida.innerHTML += `<p>Hoje o produto está mais barato!!!</p>`
+                saida.innerHTML += `<p> O preço caiu ${difpreco.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} em relação ao anterior. </p>`
+                saida.innerHTML += `<p> Uma variação de ${porcr}% pra baixo.</p>`
+        }
+    }
+        </script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média das Notas</title>
+    <style>
+        body { font: 12pt Arial; }
+        button { font-size: 12pt; padding: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Situação do Aluno</h1>
+    <button onclick="entrar()">Entrar com as Notas</button>
+    <section id="situacao">
+        <p>Clique no botão acima para informar as notas...</p>
+    </section>
+    <script>    
+        function entrar() {
+            let nom = window.prompt('Qual é o nome do aluno?') // Já que o nome não é um número e sim letras, não é preciso colocar Number() para fazer a covnersão
+            let n1 = Number(window.prompt(`Qual foi a primeira nota de ${nom}?`))
+            let n2 = Number(window.prompt(`Qual foi a segunda nota de ${nom}?`))
+
+            med = (n1 + n2)/2 // Se você não colocar os parênteses para forçar a precedência, seu cálculo vai dar um resultado errado, já que a divisão será feita antes.
+
+            let situacao = document.getElementById('situacao')
+            situacao.innerHTML = `<h2>Analisando a situação de(a) ${nom}:</h2>`
+            situacao.innerHTML += `<p>Com as notas ${n1} e ${n2}, a média é <strong>${med}</strong>.</p><br>`
+            if (med < 3){
+                situacao.innerHTML += `Com a média abaixo de 3, o aluno está <mark><strong>Reprovado!!!</strong></mark>`
+            }else if (med <=6){
+                situacao.innerHTML +=`Com a média entre 3 e 6, o aluno está em <mark><strong>Recuperação!!!</strong></mark>`
+            }else{
+                situacao.innerHTML +=`Com a média acima de 7, o aluno está <mark><strong>Aprovado!!!</strong></mark>`
+            }
+        }
+    </script>
+</body>
+</html>
+
