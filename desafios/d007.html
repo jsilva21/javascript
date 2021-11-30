@@ -23,6 +23,7 @@
 <body>
     <h1>Conversor R$ &#x2192; US$</h1>
     <button onclick="conversor()">Converter</button>
+    <button onclick="limpar()">Limpar</button>
     <section id="saida">
         <p>Clique no botão acima para iniciar.</p>
     </section>
@@ -39,6 +40,10 @@
             saida.innerHTML += `<p>Considerando que US$1.00 = ${cotacao.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} na cotação informada</p>`
             saida.innerHTML += `<p>Você pode comprar ${dolar.toLocaleString('en-US', {style: 'currency', currency: 'USD'})} dólares</p>`
         }
+        function limpar() {
+            contador = 0
+            saida.innerHTML = `<p>Fazer nova consulta!<br> Nesse caso a cotação do dolar é a primeira cotação inserida.Caso desejar calcular com outra cotação, favor recarregar o navegador com F5.</p>`
+        }   
     </script>
 </html>
 

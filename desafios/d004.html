@@ -13,6 +13,7 @@
 <body>
     <h1>Calculando o troco</h1>
     <button onclick="botao()">Comprar produto</button>
+    <button onclick="limpar()">Limpar</button>
     <section id="saida">
         
     </section>
@@ -28,12 +29,15 @@
                 //saida.innerHTML = (`Saldo insuficiente`)
                 window.alert(`Saldo Insufiente`)
             } else{        
-                //saida.innerHTML += `O${produto} custou ${valor}. O Valor entregue ao caixa ${pgto} e vai receber R$ ${troco} de troco.`
-                window.alert(`O ${produto} custou R$${valor} reais. O Valor entregue ao caixa foi de R$${pgto} reais e seu troco é R$${troco} reais.`)
+                saida.innerHTML += `<p>O ${produto} custou ${valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}. O Valor entregue ao caixa ${pgto.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} e vai receber R$ ${troco} de troco.</p>`
+                //window.alert(`O ${produto} custou R$${valor} reais. O Valor entregue ao caixa foi de R$${pgto} reais e seu troco é R$${troco} reais.`)
             }
-            }
+        }
+            function limpar() {
+            contador = 0
+            saida.innerHTML = `<p>Fazer nova consulta!</p>`
+        } 
     </script>
 </body>
 </html>
-
 

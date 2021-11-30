@@ -13,6 +13,7 @@
 <body>
     <h1>Antes e depois</h1>
     <button onclick="botao()">Antecessor e Sucessor</button>
+    <button onclick="limpar()">Limpar</button>
     <section id="saida">
         <p>Aqui exibirá o antecessor e sucessor do número digitado:</p>
     </section>
@@ -23,6 +24,10 @@
             saida.innerHTML += `O antecessor é <strong>${numero - 1}</strong></br>`
             saida.innerHTML += `O sucessor é <strong>${numero + 1}</strong>`
             }
+            function limpar() {
+            contador = 0
+            saida.innerHTML = `<p>Fazer nova consulta!</p>`
+        } 
     </script>
 </body>
 </html>

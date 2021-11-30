@@ -18,6 +18,8 @@
 <body>
     <h1>Calculcar desconto de &#x2192; 10%</h1>
     <button onclick="desconto()">Aplicar desconto</button>
+    <button onclick="limpar()">Limpar</button>
+
     <section id="saida">
         <p>Clique no botão acima para iniciar.</p>
     </section>
@@ -33,7 +35,11 @@
             saida.innerHTML = `<h2>Aplicação de desconto</h2>`
             saida.innerHTML += `<p>O preço original era de: ${valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>`
             saida.innerHTML += `<p>Considerando o desconto aplicado ${desc.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>`
-            saida.innerHTML += `<p>Seu produto saiu por ${novovalor.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})} no produto: ${produto};</p>`
+            saida.innerHTML += `<p>Seu produto saiu por ${novovalor.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}.</p>`
+        }
+        function limpar() {
+            contador = 0
+            saida.innerHTML = `<p>Fazer nova consulta!</p>`
         }
         </script>
 </html>

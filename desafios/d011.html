@@ -14,7 +14,8 @@
 </head>
 <body>
     <h1>Verificador de Ano Bissexto</h1>  
-    <button onclick="validar()">Validar</button><br />
+    <button onclick="validar()">Validar</button><br/>
+    <button onclick="limpar()">Limpar</button>
     <section id='saida'>
         <p><strong>Informe um ano...</strong></p>
     </section>
@@ -33,7 +34,10 @@
         else
          resposta.innerHTML=`O ano de ${ano}<strong><mark> não é bissexto</mark></strong> \u274C `;
      }
-     
+     function limpar() {
+            contador = 0
+            saida.innerHTML = `<p>Fazer nova consulta!</p>`
+        } 
     </script>
     
 </body>

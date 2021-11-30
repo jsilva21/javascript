@@ -30,9 +30,9 @@
                 
                 let saida = document.getElementById('saida')
                     saida.innerHTML = `<h2>Aplicação de desconto</h2>`
-                    saida.innerHTML += `<p>O preço original era de: ${valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>`
-                    saida.innerHTML += `<p>Considerando o desconto aplicado de <strong>${desc.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</strong></p>`
-                    saida.innerHTML += `<p>Seu produto saiu por ${novovalor.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}.</p>`
+                    saida.innerHTML += `<p>O preço original era de: ${valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}.</p>`
+                    saida.innerHTML += `<p>Considerando o desconto aplicado de <strong>${porc}%</strong> no valor de  <strong>${desc.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</strong>.</p>`
+                    saida.innerHTML += `<p>Seu produto saiu por <strong>${novovalor.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}</strong>.</p>`
             }
                                
             function reajuste() {
@@ -45,12 +45,12 @@
                 
                 let saida = document.getElementById('saida')
                     saida.innerHTML = `<h2>Acréscimo de juros</h2>`
-                    saida.innerHTML += `<p>O preço original era de: ${valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>`
-                    saida.innerHTML += `<p>Considerando o acréscimo de juros aplicado de <strong>${desc.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</strong></p>`
-                    saida.innerHTML += `<p>Seu produto saiu por ${novovalor.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}.</p>`
+                    saida.innerHTML += `<p>O preço original era de: ${valor.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}.</p>`
+                    saida.innerHTML += `<p>Considerando o acréscimo de juros aplicado de <strong>${porc}%</strong> no valor de <strong>${desc.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</strong>.</p>`
+                    saida.innerHTML += `<p>Seu produto saiu por <strong>${novovalor.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}</strong>.</p>`
                 }
 
-         function limpar() {
+            function limpar() {
             contador = 0
             botao.innerHTML = `<p>Fazer nova consulta!</p>`
         }        

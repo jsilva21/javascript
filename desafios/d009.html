@@ -18,6 +18,7 @@
 <body>
     <h1>Reajuste Salarial</h1>
     <button onclick="reajuste()">Aplicar reajuste</button>
+    <button onclick="limpar()">Limpar</button>
     <section id="saida">
         <p>Clique no botão acima para iniciar.</p>
     </section>
@@ -32,9 +33,13 @@
             
             let saida = document.getElementById('saida')
             saida.innerHTML = `<h2>Aplicação de reajuste</h2>`
-            saida.innerHTML += `<p>O salario atual é de: ${sal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>`
-            saida.innerHTML += `<p>Considerando o reajuste aplicado de <strong>${porc}%</strong>, no valor de ${acres.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>`
-            saida.innerHTML += `<p> O salário de ${nfunc} será ${novosal.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}</p>`
+            saida.innerHTML += `<p>O salario atual é de: ${sal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}.</p>`
+            saida.innerHTML += `<p>Considerando o reajuste aplicado de <strong>${porc}%</strong>, no valor de ${acres.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}.</p>`
+            saida.innerHTML += `<p> O novo salário de ${nfunc} será ${novosal.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}.</p>`
+        }
+        function limpar() {
+            contador = 0
+            saida.innerHTML = `<p>Fazer nova consulta!</p>`
         }
         </script>
 </html>
